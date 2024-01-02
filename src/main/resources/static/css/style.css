@@ -74,28 +74,28 @@ h2 {
     z-index: -10;
 }
 
-#clinica {
+#salao {
     display: flex;
     align-items: center;
     gap: 64px;
     padding: 64px 80px;
 }
 
-#clinica li {
+#salao li {
     margin-bottom: 16px;
     margin-left: 32px;
 }
 
-#farmacia {
+#loja {
     padding: 64px 80px;
     text-align: center;
 }
 
-#farmacia img {
+#loja img {
     margin: 64px auto;
 }
 
-#farmacia .paragrafo {
+#loja .paragrafo {
     max-width: 950px;
     margin: 0 auto;
 }
