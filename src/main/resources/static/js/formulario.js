@@ -67,3 +67,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.getElementById('agendamento-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nome = document.getElementById('nome').value;
+    const dataNascimento = document.getElementById('dataNascimento').value;
+    const dataAgendamento = document.getElementById('dataAgendamento').value;
+    const horario = document.getElementById('horario').value;
+    const servico = document.getElementById('servico').value;
+
+    fetch('/api/agendamentos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            nomeCliente: nome,
+            dataNascimentoCliente: dataNascimento,
+            dataAgendamento: dataAgendamento,
+            horarioAgendamento: horario,
+            servicoSolicitado: servico
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Agendamento realizado com sucesso!');
+        
+    })
+    .catch((error) => {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro ao agendar. Por favor, tente novamente.');
+    });
+});

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.soulcode.barbearia.model.Agendamento;
 
 @Repository
-public interface AgendamentoRepository extends JpaRepository<Agendamento, Integer> {
+public interface AgendamentoRepository extends JpaRepository<Agendamento, Long> {
   
 }
